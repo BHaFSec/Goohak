@@ -29,15 +29,19 @@ if [ -z $TARGET ]; then
 	echo -e "$OKORANGE + -- --=[http://crowdshield.com$RESET"
 	echo -e "$OKORANGE + -- --=[GooHak v1.3b by 1N3$RESET"
 	echo -e "$OKORANGE + -- --=[Modified vers. by BHaFSec"
-	echo -e "$OKORANGE + -- --=[Usage: goohak <domain>$RESET"
+	echo -e "$OKORANGE + -- --=[Usage: goohak <domain> <browser> <dorksonly>$RESET"
 	exit
 fi
+
+echo -e "Target set to: ${TARGET}"
 
 if [ -z $BROWSER ]; then
 	BROWSER='iceweasel'
 fi
 
-$BROWSER 2> /dev/null &
+echo -e "Using browser: ${BROWSER}"
+
+${BROWSER} 2> /dev/null &
 sleep 3
 
 if [ -z $DORKSONLY ]; then
@@ -88,4 +92,4 @@ sleep 2
 #$BROWSER "https://www.google.ca/search?q=site:.linkedin.com+employees+$TARGET" 2> /dev/null
 # FIND ANY FILETYPES THAT MIGHT BE OF INTEREST TO US: doc/x, xls/x, pdf, txt, rtf
 # -/.old, -/.bak, -/.orig, etc.
-$BROWSER "https://www.google.ca/search?q=site:.$TARGET+ext:pdf+|+ext:xls+|+ext:xlsx+|+ext:doc+|+ext:docx+|+ext:sql+|+ext:sqlite3+|+ext:zip+|+ext:rar+|+ext:gz+|+ext:gzip+|+ext:tgz+|+ext:tar+|+ext:7zip+|+ext:eml+|+ext:pst+|+ext:cnf+|+ext:conf+|+ext:bak+|+ext:txt+|+ext:ppt+|+ext:pptx+|+ext:rtf+|+ext:rar+|+ext:bak+|+ext:orig+|+ext:old+|+ext:log"
+${BROWSER} "https://www.google.ca/search?q=site:.$TARGET+ext:pdf+|+ext:xls+|+ext:xlsx+|+ext:doc+|+ext:docx+|+ext:sql+|+ext:sqlite3+|+ext:zip+|+ext:rar+|+ext:gz+|+ext:gzip+|+ext:tgz+|+ext:tar+|+ext:7zip+|+ext:eml+|+ext:pst+|+ext:cnf+|+ext:conf+|+ext:bak+|+ext:txt+|+ext:ppt+|+ext:pptx+|+ext:rtf+|+ext:rar+|+ext:bak+|+ext:orig+|+ext:old+|+ext:log"
